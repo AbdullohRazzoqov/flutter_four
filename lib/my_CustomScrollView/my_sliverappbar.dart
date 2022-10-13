@@ -25,6 +25,7 @@ class MySliverAppBar extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
+
             //? expandedHeight => SliverAppBarning uzunlig
             expandedHeight: MediaQuery.of(context).size.height * 0.3,
             //? pinned true bo'lsa, pastga turganda yuqolib ketmay pinned bo'lib qoladi
@@ -32,39 +33,109 @@ class MySliverAppBar extends StatelessWidget {
             //? floating => yuqoriga chiqgandan keyin pastga tortganda birdan chiqadi
             floating: true,
           ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              ([
-                Padding(
-                  padding: const EdgeInsets.all(25.0),
-                  child: Container(
-                    height: 300,
-                    width: 150,
-                    color: Colors.cyanAccent,
-                  ),
-                ),
-                Container(
-                  height: 300,
-                  width: 150,
-                  color: Colors.redAccent,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(25.0),
-                  child: Container(
-                    height: 300,
-                    width: 150,
-                    color: Colors.cyanAccent,
-                  ),
-                ),
-                Container(
-                  height: 300,
-                  width: 150,
-                  color: Colors.yellowAccent,
-                ),
-              ]),
+          //!
+          SliverPadding(
+            padding: const EdgeInsets.all(15),
+            sliver: MySliverListElement(),
+          ),
+          //!
+          MySliverFixedExtentList(),
+          //!
+          MySliverGred(),
+          //!
+          MySliverToBoxAdapter(),
+        ],
+      ),
+    );
+  }
+
+  SliverToBoxAdapter MySliverToBoxAdapter() {
+    return SliverToBoxAdapter(
+      child: SizedBox(
+        height: 50,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (_, __) => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: 200,
+              color: Colors.cyan,
             ),
           ),
-        ],
+          itemCount: 60,
+        ),
+      ),
+    );
+  }
+
+  SliverGrid MySliverGred() {
+    return SliverGrid(
+      delegate: SliverChildBuilderDelegate((_, __) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 200,
+            color: Colors.green,
+          ),
+        );
+      }, childCount: 4),
+      gridDelegate:
+          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+    );
+  }
+
+  SliverFixedExtentList MySliverFixedExtentList() {
+    return SliverFixedExtentList(
+        delegate: SliverChildListDelegate([
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 200,
+              color: Colors.teal,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 200,
+              color: Colors.teal,
+            ),
+          )
+        ]),
+        itemExtent: 300);
+  }
+
+  SliverList MySliverListElement() {
+    return SliverList(
+      delegate: SliverChildListDelegate(
+        ([
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Container(
+              height: 300,
+              width: 150,
+              color: Colors.cyanAccent,
+            ),
+          ),
+          Container(
+            height: 300,
+            width: 150,
+            color: Colors.redAccent,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Container(
+              height: 300,
+              width: 150,
+              color: Colors.cyanAccent,
+            ),
+          ),
+          Container(
+            height: 300,
+            width: 150,
+            color: Colors.yellowAccent,
+          ),
+        ]),
       ),
     );
   }
