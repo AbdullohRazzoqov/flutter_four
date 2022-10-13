@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_four/my_showSnackBar/my_showsnackbar.dart';
+import 'package:flutter_four/my_packages/my_fluttertoast.dart';
+import 'package:flutter_four/my_packages/my_showdialog.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
       ),
-      home:  MyShowSnackBar(),
+      home:  MyShowDialog(),
     );
   }
 }
