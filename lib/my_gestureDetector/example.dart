@@ -29,10 +29,13 @@ class _ExampleGestureDetectorState extends State<ExampleGestureDetector> {
               );
             },
             child: Container(
-        width: 100,
-        height: 100,
-        decoration: const BoxDecoration(color: Colors.redAccent,shape: BoxShape.circle),
-      ),
+              width: 100,
+              height: 100,
+              decoration: const BoxDecoration(
+                color: Colors.redAccent,
+                shape: BoxShape.circle,
+              ),
+            ),
           ),
         )
       ],
