@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//! ShowDialog 
+//! ShowDialog
 //? fluttertoast: ^8.0.9
 
 class MyShowDialog extends StatelessWidget {
@@ -22,11 +22,25 @@ class MyShowDialog extends StatelessWidget {
                     backgroundColor: Colors.transparent,
                     elevation: 0.0,
                     actions: [
-                      ElevatedButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Text("Cancel"))
+                      ButtonBar(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: const Text("Cancel"),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text("Cancel"),
+                          )
+                        ],
+                      )
+                      // ElevatedButton(
+                      //     onPressed: () {
+                      //       Navigator.pop(context);
+                      //     },
+                      //     child: const Text("Cancel"),)
                     ],
                   );
                 });

@@ -1,6 +1,5 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_four/my_packages/my_awesome_dialog.dart';
+import 'package:flutter_four/my_gestureDetector/example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
       ),
-      home:  MyAwesomedialog(),
+      home:const   ExampleGestureDetector(),
     );
 
   }
