@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_four/screen/example_stack.dart';
+import 'package:flutter_four/my_showSnackBar/my_showsnackbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
       ),
-      home: const ExampleStack(),
+      home:  MyShowSnackBar(),
     );
   }
 }
