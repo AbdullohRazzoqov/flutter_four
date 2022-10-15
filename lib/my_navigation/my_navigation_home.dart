@@ -5,6 +5,7 @@ import 'package:flutter_four/my_navigation/page/c.page.dart';
 import 'page/a_page.dart';
 //! Sahifadan sahifaga o'tish
 //? Navigator.of(context).push  => orqaga qaytadigan qilib o'tadi
+//? Ustma ust qilib(qavat qavat) qilib ochib ketadi
 
 class MyNavigationHome extends StatelessWidget {
   const MyNavigationHome({super.key});
