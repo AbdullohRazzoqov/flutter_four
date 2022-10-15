@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_four/my_navigation/my_navigation_home.dart';
+import 'package:flutter_four/routers/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
       ),
-      home:const   MyNavigationHome(),
+      //? initialRoute => Boshlanish sahifasi
+      initialRoute: "/",onGenerateRoute: RouteGenerator.router.ongenerateRoute,
     );
 
   }
