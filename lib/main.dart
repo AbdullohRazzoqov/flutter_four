@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_four/my_CustomScrollView/my_sliverappbar.dart';
-import 'package:flutter_four/my_gestureDetector/example.dart';
+import 'package:flutter_four/my_navigation/my_navigation_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
       ),
-      home:const   MySliverAppBar(),
+      home:const   MyNavigationHome(),
     );
 
   }
